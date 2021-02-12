@@ -1,0 +1,4 @@
+0_set_env.sh 
+node_modules
+npm-debug.log
+set_env.sh

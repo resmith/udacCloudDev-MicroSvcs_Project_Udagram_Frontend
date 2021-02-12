@@ -1,3 +1,7 @@
+0_set_env.sh
+app-config.yaml
+app-config-secret.yaml
+
 # Logs
 logs
 *.log

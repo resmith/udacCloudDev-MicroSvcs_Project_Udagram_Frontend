@@ -1,0 +1,22 @@
+# *** 
+# *** 1st Stage: Transpile TypeScript 
+# *** 
+FROM node:15.4.0 AS build
+WORKDIR /usr/src/app
+COPY package*.json .
+COPY ionic.config.json ./
+#
+RUN npm install -g ionic
+RUN npm install 
+# Copy the app
+COPY . ./
+RUN ionic build
+#
+# Expose the app port via docker
+EXPOSE 8080
+
+# Expose port for Postgres
+EXPOSE 5432
+#
+# Start the App
+CMD ["ionic", "serve"]
